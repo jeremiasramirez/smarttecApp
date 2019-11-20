@@ -30,5 +30,7 @@
     * editar el contacto indicado por el cliente.
 
     * eliminar el contacto indicado. 
-    
+   
+<strong> (OJO) deben poner el proyecto en un servidor local, el nombre de la carpeta debe llamarse smarttectApp y listo. </strong>   
+   
   ****** enviar el proyecto via github u otra via de repositorio (público)*****
