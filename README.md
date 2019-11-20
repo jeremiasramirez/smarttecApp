@@ -1,2 +1,2 @@
 # smarttecApp
-LEER EL ARCHIVO readme.md
+<h3 style="color: orangered"> LEER EL ARCHIVO readme.md </h3>
