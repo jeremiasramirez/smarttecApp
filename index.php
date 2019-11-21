@@ -7,10 +7,12 @@
 ?>
 
 <!DOCTYPE html>
- <html lang="es">
+ <html lang="es" ng-app="">
  <head>
  	<meta charset="UTF-8">
- 	<title>Login | smartTecApp</title>
+
+ 	<!--    title app   -->
+ 	<title> smartTecApp | APP </title>
 
     <!-- viewport -->
      	<meta name="viewport" content="width=device-width,
@@ -19,7 +21,7 @@
      	            maximum-scale=1.0,
      	            minimum-scale=1.0">
 
-    <!--    styles css  -->
+    <!-- **********    styles css    ********* -->
 
     <!--    own library -->
     <link rel="stylesheet" href="public/css/lib/jeremias-lib/jeremias-lib.css" />
@@ -30,6 +32,14 @@
     <!--    icon   -->
     <link rel="stylesheet" href="public/css/lib/fontawesome/css/all.css" />
 
+    <!--    easy dom css   -->
+    <link rel="stylesheet" href="public/css/lib/easydom/easydom.css" />
+
+    <!--    easy dom js   -->
+   <script src="public/js/lib/easydom/easydom.js">  </script>
+
+
+
  </head>
  <body>
 
@@ -37,13 +47,13 @@
 
 
 
+    <!--    data    -->
+    <div ng-view>   </div>
 
 
 
-    <!--  *****  script js  ***** -->
 
-    <!--    easy dom    -->
-    <script src="public/js/lib/easydom/easydom.js">  </script>
+
 
  </body>
  </html>
