@@ -27,10 +27,13 @@
     <!--    own library -->
     <link rel="stylesheet" href="../public/css/lib/jeremias-lib/jeremias-lib.css" />
 
-    <!--    login   -->
-    <link rel="stylesheet" href="../public/css/login.css" />
-
     <!--    icon   -->
+    <link rel="stylesheet" href="../public/css/lib/fontawesome/css/all.css" />
+
+    <!--    main css   -->
+    <link rel="stylesheet" href="../public/css/main.css" />
+
+    <!--    login   -->
     <link rel="stylesheet" href="../public/css/login.css" />
 
 
