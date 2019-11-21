@@ -39,7 +39,8 @@
    <script src="public/js/lib/easydom/easydom.js">  </script>
 
 
-
+    <!--    angular - library    -->
+    <script src="node_modules/angular/angular.js"> </script>
  </head>
  <body>
 
