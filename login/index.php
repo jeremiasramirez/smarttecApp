@@ -43,6 +43,8 @@
     <link rel="stylesheet" href="../public/css/login.css" />
 
 
+    <!--  easy dom css   -->
+     <link rel="stylesheet" href="../public/css/lib/easydom/easydom.css">
  </head>
  <body>
 
@@ -56,20 +58,20 @@
              <i class="fas fa-shield-alt secure"></i>
          </h1>
 
-         <input type="number" name="result" placeholder="2 + 2 = ?">
+         <input type="number" id="result" name="result" placeholder="2 + 2 = ?">
 
-         <button class="btn--yes">Validate</button>
+         <button class="btn--yes" id="send">Validate</button>
      </form>
 
 </div>
 
-    <!--    login script    -->
-    <script src="../public/js/lib/login/login.js">   </script>
 
 
     <!--    easy dom    -->
     <script src="../public/js/lib/easydom/easydom.js">  </script>
 
+    <!--    login script    -->
+    <script src="../public/js/lib/login/login.js">   </script>
 
 
  </body>
