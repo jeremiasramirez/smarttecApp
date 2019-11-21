@@ -21,7 +21,14 @@ smartTecApp.controller("mainController", [ "$scope" ,"$http", "$timeout", functi
                 id: idObj,
                 name: nameObj,
                 email: emailObj,
-                number: numberObj
+                number: numberObj,
+                address: {
+                    city: city
+,                },
+                company: {
+                    name: company
+                },
+                website: site
 
             };
 
