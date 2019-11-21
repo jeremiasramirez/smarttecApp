@@ -15,7 +15,9 @@
 </div>
 
 
-
+<div>
+    {{data | json}}
+</div>
 
     <!--    create contact    -->
 <section class="container__add">
@@ -87,20 +89,46 @@
         </div>
 
 
+        <!--    container numberphone    -->
+        <div class="container__data">
+            <p> Number </p>
+            <p> {{contact.phone}} </p>
+        </div>
+
+
+        <section class="containerHideMore" ng-hide="checked">
+
+            <div class="container__data">
+                <p> City </p>
+                <p> {{contact.address.city}} </p>
+            </div>
+
+        </section>
+
+
 
         <!-- Edition -->
         <div class="editionContact" ng-if="checked" ng-hide="hideEdition">
+            <hr>
             <form class="form">
 
+                <h1 class="editTitleName">Edit</h1>
 
                 <label>
                      <input ng-model="contact.name" type="text" value="{{ contact.name }}">
                 </label>
 
                 <label>
-                     <input ng-model="contact.name" type="text" value="{{ contact.name }}">
+                     <input ng-model="contact.email" type="text" value="{{ contact.email }}">
                 </label>
 
+                <label>
+                    <input ng-model="contact.phone" type="text" value="{{ contact.phone }}">
+                </label>
+
+                <label>
+                    <input ng-model="contact.address.city" type="text" value="{{ contact.phone }}">
+                </label>
 
 
             </form>
@@ -114,8 +142,11 @@
         <!--    container show && remove contact    -->
         <div class="container__data">
 
-            <i class="fas fa-trash trash" ng-click="removeContact(contact.name)"></i>
-            <i class="fas fa-arrow-down showMoreData" ng-click="showMore()"></i>
+            <i class="fas fa-trash trash" ng-click="removeContact(contact.name)" title="Delete {{contact.name}}"></i>
+            <label>
+                <i class="fas fa-arrow-down showMoreData" ng-click="showMore()" title="Show more"></i>
+                <input type="checkbox" ng-model="checked" style="opacity: 0">
+            </label>
 
         </div>
     </div>

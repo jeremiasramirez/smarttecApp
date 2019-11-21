@@ -111,8 +111,17 @@ smartTecApp.controller("mainController", [ "$scope" ,"$http", "$timeout", functi
 
 
 
+    $scope.showMoreHide = 0;
+    $scope.showMore = function(){
 
+        if($scope.showMoreHide === 1){
+            $scope.showMoreHide = 0;
+        }
+        else{
+            $scope.showMoreHide = 1;
+        }
 
+    }
 
 
 
