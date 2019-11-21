@@ -47,6 +47,15 @@
 
     <!--   config app   -->
     <script src="public/js/config/config.js"> </script>
+
+    <!--   config route - app   -->
+    <script src="public/js/config/config-routes.js"> </script>
+
+
+    <!--   controller   -->
+    <script src="public/js/controller/main-controller.js"> </script>
+
+
  </head>
  <body>
 
