@@ -7,7 +7,13 @@ smartTecApp.controller("mainController", [ "$scope" ,"$http", "$timeout", functi
 
     $scope.data = [];
 
+    $scope.newPerson = {
+        name: "name",
+        email: "jereramirez499@gmail.com",
+        number: "numberPhone"
+    };
 
+    /*http request*/
     $http({
 
 
@@ -17,8 +23,7 @@ smartTecApp.controller("mainController", [ "$scope" ,"$http", "$timeout", functi
 
     }).then((res) => {
 
-
-       console.log(res)
+        $scope.data = res.data;
 
 
     });

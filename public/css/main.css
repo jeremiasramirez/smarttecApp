@@ -1,3 +1,28 @@
 .title__contact{
+
     color: blue;
+
+}
+
+.container__contact{
+
+    width: 310px;
+    border: 1px solid blue;
+
+}
+
+.container__id{
+
+    padding-right: .3em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.container__id .edit{
+
+    color: blue;
+    font-size: 18px;
+    cursor: pointer;
 }

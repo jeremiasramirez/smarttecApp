@@ -4,6 +4,20 @@
     <h1 class="title letter3 title__contact">Contáctos</h1>
 </div>
 
-<div>
+<section class="container__all__contacts">
 
-</div>
+    <div class="container__contact" ng-repeat="contact in data | limitTo: 1">
+
+        <!--    Container id && Edit   -->
+        <div class="container__id">
+
+            <span class="btn--rm">{{contact.id}}</span>
+            <i class="fas fa-user-edit edit"></i>
+
+        </div>
+
+
+    </div>
+
+
+</section>
