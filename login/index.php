@@ -1,5 +1,11 @@
 <?php
     session_start();
+//    session_destroy();
+
+    if(isset($_POST["result"]) && $_POST["result"] == 4){
+        $_SESSION["secure"] = "secure";
+    }
+
     if( isset($_SESSION["secure"]) && $_SESSION["secure"] = "secure" ){
         header("Location: ../");
     }
@@ -40,11 +46,22 @@
  </head>
  <body>
 
+<div class="containerSecurity">
 
 
+     <form action="index.php" class="form" method="post">
+         <h1 class="titleSecurity">SmartTec Security</h1>
+
+         <input type="number" name="result">
+
+         <button class="btn--yes">Validate</button>
+     </form>
+
+</div>
 
     <!--    login script    -->
     <script src="../public/js/lib/login/login.js">   </script>
+
 
     <!--    easy dom    -->
     <script src="../public/js/lib/easydom/easydom.js">  </script>

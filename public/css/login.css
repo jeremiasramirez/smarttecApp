@@ -1,0 +1,12 @@
+.titleSecurity{
+    color: orangered;
+    font-family: sans-serif;
+    font-size: 20px;
+}
+
+.containerSecurity{
+    display: flex;
+    margin-top: 6em;
+    justify-content: center;
+    align-items: center;
+}

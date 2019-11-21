@@ -1,8 +1,10 @@
 <?php
 
-    /*
-        ~   future code   ~
-    */
+    session_start();
+
+    if(!isset($_SESSION["secure"])){
+        header("Location: login/index.php");
+    }
 
 ?>
 
