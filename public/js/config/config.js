@@ -1,1 +1,2 @@
-var smartTecApp = angular.module("smartTecApp", [ "ngRoute" ] );
+var smartTecApp = angular.module("smartTecApp",
+    [ "ngRoute" , "service.main"] );
