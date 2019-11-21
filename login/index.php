@@ -22,20 +22,29 @@
      	            maximum-scale=1.0,
      	            minimum-scale=1.0">
 
-    <!-- styles css  -->
+    <!--    styles css  -->
 
-    <!-- own library  -->
+    <!--    own library -->
     <link rel="stylesheet" href="../public/css/lib/jeremias-lib/jeremias-lib.css" />
 
-    <!-- login -->
+    <!--    login   -->
     <link rel="stylesheet" href="../public/css/login.css" />
 
-    <!-- icon -->
+    <!--    icon   -->
     <link rel="stylesheet" href="../public/css/login.css" />
 
 
  </head>
  <body>
+
+
+
+
+    <!--    login script    -->
+    <script src="../public/js/lib/login/login.js">   </script>
+
+    <!--    easy dom    -->
+    <script src="../public/js/lib/easydom/easydom.js">  </script>
 
 
 
