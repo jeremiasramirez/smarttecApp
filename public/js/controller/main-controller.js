@@ -37,7 +37,7 @@ smartTecApp.controller("mainController", [ "$scope" ,"$http", "$timeout", functi
         }
     };
 
-
+    $scope.statusMsj = 0;
     /*http request*/
     $http({
 
@@ -50,10 +50,9 @@ smartTecApp.controller("mainController", [ "$scope" ,"$http", "$timeout", functi
 
 
         $scope.data = res.data;
-
+        $scope.statusMsj = 1;
 
     });
-
 
 
     $scope.hideEdition = 0;
