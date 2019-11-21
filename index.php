@@ -53,9 +53,6 @@
     <!--   config route - app   -->
     <script src="public/js/config/config-routes.js"> </script>
 
-    <!--    services    -->
-    <script src="public/js/services/main-service.js"> </script>
-
 
     <!--   controller   -->
 

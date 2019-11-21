@@ -2,11 +2,29 @@
 * main controller app
 * */
 
-smartTecApp.controller("mainController", ["dataRequest", "$scope" , "$timeout", function(dataRequest, $scope, $timeout ){
+smartTecApp.controller("mainController", [ "$scope" ,"$http", "$timeout", function( $scope, $http,  $timeout ){
 
-    $scope.name = dataRequest;
 
-    console.log($scope.name)
+    $scope.data = [];
+
+
+    $http({
+
+
+        method: "get",
+        url: "https://jsonplaceholder.typicode.com/users"
+
+
+    }).then((res) => {
+
+
+       console.log(res)
+
+
+    });
+
+
+
 
 
 }]);
