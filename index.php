@@ -7,7 +7,7 @@
 ?>
 
 <!DOCTYPE html>
- <html lang="es" ng-app="">
+ <html lang="es" ng-app="smartTecApp">
  <head>
  	<meta charset="UTF-8">
 
@@ -39,8 +39,14 @@
    <script src="public/js/lib/easydom/easydom.js">  </script>
 
 
-    <!--    angular - library    -->
+    <!--    angular  library    -->
     <script src="node_modules/angular/angular.js"> </script>
+
+    <!--    angular > angular - route    -->
+    <script src="node_modules/angular-route/angular-route.js"> </script>
+
+    <!--   config app   -->
+    <script src="public/js/config/config.js"> </script>
  </head>
  <body>
 
