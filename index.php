@@ -43,6 +43,17 @@
  </head>
  <body>
 
+    <!-- Main menu -->
+    <nav>
+
+        <ul class="menu--blue">
+            <li> <a href="#!/" class=letter3> smartTecApp </a> </li>
+        </ul>
+
+    </nav>
+
+
+
 
 
 
