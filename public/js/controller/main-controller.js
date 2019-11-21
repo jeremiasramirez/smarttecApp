@@ -44,12 +44,6 @@ smartTecApp.controller("mainController", [ "$scope" ,"$http", "$timeout", functi
         $scope.data = res.data;
 
 
-        console.log(res.data)
-
-
-
-
-
     });
 
 
@@ -93,13 +87,28 @@ smartTecApp.controller("mainController", [ "$scope" ,"$http", "$timeout", functi
 
                 $timeout(()=>{
                     allContacts[i].remove();
-                }, 1500)
+                }, 500)
 
             }, false)
 
         }
 
     };
+
+
+
+
+
+    $scope.hideCreateContact = 1;
+    $scope.hideCreated  = function(){
+        if($scope.hideCreateContact === 1){
+            $scope.hideCreateContact = 0;
+        }
+        else{
+            $scope.hideCreateContact = 1;
+        }
+    };
+
 
 
 
