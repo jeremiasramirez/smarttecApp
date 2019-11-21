@@ -7,7 +7,7 @@
 
 
 
-<!--title  app-->
+    <!--    title  app-->
 <div class="container__title__page">
     <h1 class="title letter4 title__contact">
         <i class="fas fa-users"></i>
@@ -15,172 +15,184 @@
 </div>
 
 
-    <!--    create contact    -->
-<section class="container__add min">
 
-    <!-- icon add   -->
-    <label class="elements container__data" ng-click="hideCreated()">
-
-        <p class="alert--warning min addNewContactButton">
-            New
-            <i class="far fa-plus-square add"></i>
-        </p>
-
-
-    </label>
-
-
-<!--    inputs - create contact -->
-    <article class="container__add__contact" ng-hide="hideCreateContact">
-        <h1 class="titleCreateContact">  Create a contact</h1>
-        <form class="form createGrid">
-
-            <input type="number" placeholder="ID" ng-model="id">
-            <input type="text" placeholder="Name" ng-model="name" >
-            <input type="email" placeholder="Email" ng-model="email" >
-            <input type="text"  placeholder="Number phone" ng-model="phone" >
-            <input type="text"  placeholder="City" ng-model="city" >
-            <input type="text"  placeholder="Website" ng-model="site" >
-            <input type="text"  placeholder="Company" ng-model="company" >
-            <button class="btn--add min"  ng-click="createPerson(id, name, email, phone, city, site, company)"> Create  </button>
-
-        </form>
-    </article>
-
-
-
-
-</section>
-<section class="container__all__contacts">
-
-
-    <div class="container__contact"
-         id="container__contact"
-         ng-repeat="contact in data | filter: searchs" >
-
-
-        <!--    Container id && Edit   -->
-        <div class="container__id" >
-            <span class="btn--rm" id="id">{{contact.id}}</span>
-
-            <label>
-
-                <i class="fas fa-user-edit edit" ng-click="showOrHide()" title="Edit">
-                    <input type="checkbox" ng-model="checked" style="opacity: 0">
-                </i>
-
-            </label>
-
-
-
-        </div>
-
-
-
-        <!--   container name   -->
-        <div class="container__data">
-            <p> Name </p>
-            <p> {{contact.name}} </p>
-        </div>
-
-
-        <!--    container email    -->
-        <div class="container__data">
-            <p> Email </p>
-            <p> {{contact.email}} </p>
-        </div>
-
-
-        <!--    container numberphone    -->
-        <div class="container__data">
-            <p> Number </p>
-            <p> {{contact.phone}} </p>
-        </div>
-
-
-
-        <section class="containerHideMore"  ng-if="checked2">
-
-            <div class="container__data">
-                <p> City </p>
-                <p> {{contact.address.city}} </p>
-            </div>
-
-
-            <div class="container__data">
-                <p> Website </p>
-                <p><a href="https://{{contact.website}} ">{{contact.website}} </a> </p>
-            </div>
-
-
-            <div class="container__data">
-                <p> Company </p>
-                <p> {{contact.company.name}} </p>
-            </div>
-
-
-        </section>
-
-
-
-        <!-- Edition -->
-        <div class="editionContact" ng-if="checked" ng-hide="hideEdition">
-            <hr>
-            <form class="form">
-
-                <h1 class="editTitleName">
-                    Edit
-                    <i class="far fa-plus-square add"></i>
-                </h1>
-
-                <label>
-                     <input ng-model="contact.name" type="text" value="{{ contact.name }}">
-                </label>
-
-                <label>
-                     <input ng-model="contact.email" type="text" value="{{ contact.email }}">
-                </label>
-
-                <label>
-                    <input ng-model="contact.phone" type="text" value="{{ contact.phone }}">
-                </label>
-
-                <label>
-                    <input ng-model="contact.address.city" type="text" value="{{ contact.address.city }}">
-                </label>
-
-                <label>
-                    <input ng-model="contact.website" type="text" value="{{ contact.website }}">
-                </label>
-
-                <label>
-                    <input ng-model="contact.company.name" type="text" value="{{ contact.company.name }}">
-                </label>
-
-
-            </form>
-        </div>
-
-
-
-
-
-
-        <div>
-            </div>
-
-            <!--    container show && remove contact    -->
-            <div class="container__data">
-
-                <i class="fas fa-trash trash" ng-click="removeContact(contact.name)" title="Delete {{contact.name}}"></i>
-                <label>
-                    <i class="fas fa-arrow-down showMoreData" id="showMoreData"  ng-click="showMore()" title="Show more"></i>
-                    <input type="checkbox" ng-model="checked2" style="opacity: 0">
-                </label>
-
-            </div>
+    <!--  load spinner     -->
+    <div class="spinner" ng-if="statusMsj=1">
+        <i class="fas fa-spinner"></i>
     </div>
 
 
+
+<section class="container__father__data" ng-if="statusMsj=0">
+
+        <!--    create contact    -->
+    <section class="container__add min">
+
+        <!-- icon add   -->
+        <label class="elements container__data" ng-click="hideCreated()">
+
+            <p class="alert--warning min addNewContactButton">
+                New
+                <i class="far fa-plus-square add"></i>
+            </p>
+
+
+        </label>
+
+
+    <!--    inputs - create contact -->
+        <article class="container__add__contact" ng-hide="hideCreateContact">
+            <h1 class="titleCreateContact">  Create a contact</h1>
+            <form class="form createGrid">
+
+                <input type="number" placeholder="ID" ng-model="id">
+                <input type="text" placeholder="Name" ng-model="name" >
+                <input type="email" placeholder="Email" ng-model="email" >
+                <input type="text"  placeholder="Number phone" ng-model="phone" >
+                <input type="text"  placeholder="City" ng-model="city" >
+                <input type="text"  placeholder="Website" ng-model="site" >
+                <input type="text"  placeholder="Company" ng-model="company" >
+                <button class="btn--add min"  ng-click="createPerson(id, name, email, phone, city, site, company)"> Create  </button>
+
+            </form>
+        </article>
+
+
+
+
+    </section>
+    <section class="container__all__contacts">
+
+
+        <div class="container__contact"
+             id="container__contact"
+             ng-repeat="contact in data | filter: searchs" >
+
+
+            <!--    Container id && Edit   -->
+            <div class="container__id" >
+                <span class="btn--rm" id="id">{{contact.id}}</span>
+
+                <label>
+
+                    <i class="fas fa-user-edit edit" ng-click="showOrHide()" title="Edit">
+                        <input type="checkbox" ng-model="checked" style="opacity: 0">
+                    </i>
+
+                </label>
+
+
+
+            </div>
+
+
+
+            <!--   container name   -->
+            <div class="container__data">
+                <p> Name </p>
+                <p> {{contact.name}} </p>
+            </div>
+
+
+            <!--    container email    -->
+            <div class="container__data">
+                <p> Email </p>
+                <p> {{contact.email}} </p>
+            </div>
+
+
+            <!--    container numberphone    -->
+            <div class="container__data">
+                <p> Number </p>
+                <p> {{contact.phone}} </p>
+            </div>
+
+
+
+            <section class="containerHideMore"  ng-if="checked2">
+
+                <div class="container__data">
+                    <p> City </p>
+                    <p> {{contact.address.city}} </p>
+                </div>
+
+
+                <div class="container__data">
+                    <p> Website </p>
+                    <p><a href="https://{{contact.website}} ">{{contact.website}} </a> </p>
+                </div>
+
+
+                <div class="container__data">
+                    <p> Company </p>
+                    <p> {{contact.company.name}} </p>
+                </div>
+
+
+            </section>
+
+
+
+            <!-- Edition -->
+            <div class="editionContact" ng-if="checked" ng-hide="hideEdition">
+                <hr>
+                <form class="form">
+
+                    <h1 class="editTitleName">
+                        Edit
+                        <i class="far fa-plus-square add"></i>
+                    </h1>
+
+                    <label>
+                         <input ng-model="contact.name" type="text" value="{{ contact.name }}">
+                    </label>
+
+                    <label>
+                         <input ng-model="contact.email" type="text" value="{{ contact.email }}">
+                    </label>
+
+                    <label>
+                        <input ng-model="contact.phone" type="text" value="{{ contact.phone }}">
+                    </label>
+
+                    <label>
+                        <input ng-model="contact.address.city" type="text" value="{{ contact.address.city }}">
+                    </label>
+
+                    <label>
+                        <input ng-model="contact.website" type="text" value="{{ contact.website }}">
+                    </label>
+
+                    <label>
+                        <input ng-model="contact.company.name" type="text" value="{{ contact.company.name }}">
+                    </label>
+
+
+                </form>
+            </div>
+
+
+
+
+
+
+            <div>
+                </div>
+
+                <!--    container show && remove contact    -->
+                <div class="container__data">
+
+                    <i class="fas fa-trash trash" ng-click="removeContact(contact.name)" title="Delete {{contact.name}}"></i>
+                    <label>
+                        <i class="fas fa-arrow-down showMoreData" id="showMoreData"  ng-click="showMore()" title="Show more"></i>
+                        <input type="checkbox" ng-model="checked2" style="opacity: 0">
+                    </label>
+
+                </div>
+        </div>
+
+
+
+    </section>
 
 </section>
