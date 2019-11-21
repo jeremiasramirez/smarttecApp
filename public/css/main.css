@@ -186,3 +186,23 @@ label{
     justify-content: center;
     align-items: center;
 }
+
+.spinner{
+    text-align: center;
+    color: blue;
+    font-size: 22px;
+
+}
+
+.spinner i{
+
+    transition: 5s;
+    animation: rotateSpinner 4s infinite linear;
+}
+
+@keyframes rotateSpinner{
+    to{
+        transition: 5s;
+        transform: rotate(360deg) scale(1.1);
+    }
+}
