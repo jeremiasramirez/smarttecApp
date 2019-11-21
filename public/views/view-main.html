@@ -1,10 +1,17 @@
 
 <!--title -->
-<div>
-    <h1 class="title letter3 title__contact">Contáctos</h1>
+<div class="container__title__page">
+    <h1 class="title letter4 title__contact">
+        <i class="fas fa-users"></i>
+    </h1>
 </div>
 
+
+
+
+
 <section class="container__all__contacts">
+
 
     <div class="container__contact" ng-repeat="contact in data | limitTo: 1">
 
@@ -15,6 +22,14 @@
             <i class="fas fa-user-edit edit"></i>
 
         </div>
+
+        <div class="container__data">
+            <p>Name</p>
+            <p>{{contact.name}}</p>
+        </div>
+
+
+
 
 
     </div>
