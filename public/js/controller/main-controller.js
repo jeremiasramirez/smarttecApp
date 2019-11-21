@@ -7,9 +7,9 @@ smartTecApp.controller("mainController", [ "$scope" ,"$http", "$timeout", functi
 
     $scope.data = [];
 
-
+    $scope.hideCreateContact = 0;
     $scope.createPerson = function(idObj, nameObj, emailObj, numberObj, city , site, company){
-
+        $scope.hideCreateContact =1
         if( (( idObj = undefined ) === true) || ( nameObj === undefined ) || ( emailObj === "" ) || ( numberObj === "" ) || (city === "") || (site === "") || (company === "") ){
             floatNotificationError("fields are not accepted");
         }

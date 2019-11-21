@@ -47,11 +47,11 @@
                 <input type="number" placeholder="ID" ng-model="id">
                 <input type="text" placeholder="Name" ng-model="name" >
                 <input type="email" placeholder="Email" ng-model="email" >
-                <input type="text"  placeholder="Number phone" ng-model="phonex">
+                <input type="text"  placeholder="Number phone" ng-model="phone">
                 <input type="text"  placeholder="City" ng-model="city" >
                 <input type="text"  placeholder="Website" ng-model="site" >
                 <input type="text"  placeholder="Company" ng-model="company" >
-                <button class="btn--add min"  ng-click="createPerson(id, name, email, phonex, city, site, company)"> Create  </button>
+                <button class="btn--add min"  ng-click="createPerson(id, name, email, phone, city, site, company)"> Create  </button>
 
             </form>
         </article>
@@ -143,27 +143,31 @@
                     </h1>
 
                     <label>
-                         <input ng-model="contact.name" type="text" value="{{ contact.name }}">
+                        <input ng-model="contact.id" type="text" value="{{ contact.id }}" placeholder="ID">
                     </label>
 
                     <label>
-                         <input ng-model="contact.email" type="text" value="{{ contact.email }}">
+                         <input ng-model="contact.name" type="text" value="{{ contact.name }}" placeholder="Name">
                     </label>
 
                     <label>
-                        <input ng-model="phonex" type="text" value="{{ phonex }}">
+                         <input ng-model="contact.email" type="text" value="{{ contact.email }}" placeholder="Email">
                     </label>
 
                     <label>
-                        <input ng-model="contact.address.city" type="text" value="{{ contact.address.city }}">
+                        <input ng-model="contact.phone" type="text" value="{{ contact.phone }}" placeholder="Number">
                     </label>
 
                     <label>
-                        <input ng-model="contact.website" type="text" value="{{ contact.website }}">
+                        <input ng-model="contact.address.city" type="text" value="{{ contact.address.city }}" placeholder="City">
                     </label>
 
                     <label>
-                        <input ng-model="contact.company.name" type="text" value="{{ contact.company.name }}">
+                        <input ng-model="contact.website" type="text" value="{{ contact.website }}" placeholder="Website">
+                    </label>
+
+                    <label>
+                        <input ng-model="contact.company.name" type="text" value="{{ contact.company.name }}" placeholder="Company">
                     </label>
 
 
