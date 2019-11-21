@@ -2,8 +2,11 @@
 * main controller app
 * */
 
-smartTecApp.controller("mainController", ["$scope", "$timeout",  "$scope" , "$timeout" , function( $scope, $timeout ){
+smartTecApp.controller("mainController", ["dataRequest", "$scope" , "$timeout", function(dataRequest, $scope, $timeout ){
 
+    $scope.name = dataRequest;
+
+    console.log($scope.name)
 
 
 }]);
