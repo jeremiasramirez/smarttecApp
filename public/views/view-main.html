@@ -6,7 +6,6 @@
 
 
 
-
     <!--    title  app-->
 <div class="container__title__page">
     <h1 class="title letter4 title__contact">
@@ -17,13 +16,13 @@
 
 
     <!--  load spinner     -->
-    <div class="spinner" ng-if="statusMsj=1">
+    <div class="spinner" ng-hide="statusMsj==1">
         <i class="fas fa-spinner"></i>
     </div>
 
 
 
-<section class="container__father__data" ng-if="statusMsj=0">
+<section class="container__father__data" ng-if="statusMsj==1">
 
         <!--    create contact    -->
     <section class="container__add min">
@@ -48,11 +47,11 @@
                 <input type="number" placeholder="ID" ng-model="id">
                 <input type="text" placeholder="Name" ng-model="name" >
                 <input type="email" placeholder="Email" ng-model="email" >
-                <input type="text"  placeholder="Number phone" ng-model="phone" >
+                <input type="text"  placeholder="Number phone" ng-model="phonex">
                 <input type="text"  placeholder="City" ng-model="city" >
                 <input type="text"  placeholder="Website" ng-model="site" >
                 <input type="text"  placeholder="Company" ng-model="company" >
-                <button class="btn--add min"  ng-click="createPerson(id, name, email, phone, city, site, company)"> Create  </button>
+                <button class="btn--add min"  ng-click="createPerson(id, name, email, phonex, city, site, company)"> Create  </button>
 
             </form>
         </article>
@@ -152,7 +151,7 @@
                     </label>
 
                     <label>
-                        <input ng-model="contact.phone" type="text" value="{{ contact.phone }}">
+                        <input ng-model="phonex" type="text" value="{{ phonex }}">
                     </label>
 
                     <label>

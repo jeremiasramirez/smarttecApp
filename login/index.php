@@ -50,9 +50,13 @@
 
 
      <form action="index.php" class="form" method="post">
-         <h1 class="titleSecurity">SmartTec Security</h1>
 
-         <input type="number" name="result">
+         <h1 class="titleSecurity">
+             SmartTec Security
+             <i class="fas fa-shield-alt secure"></i>
+         </h1>
+
+         <input type="number" name="result" placeholder="2 + 2 = ?">
 
          <button class="btn--yes">Validate</button>
      </form>
