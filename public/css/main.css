@@ -115,3 +115,14 @@ label{
         transform: translateY(-3px);
     }
 }
+
+
+.addNewContactButton:hover{
+    transform: scale(.9);
+}
+
+.container__add__contact{
+    display: flex;
+    margin:.5em;
+    justify-content: space-between;
+}
