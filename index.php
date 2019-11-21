@@ -45,14 +45,20 @@
     <!--    angular > angular - route    -->
     <script src="node_modules/angular-route/angular-route.js"> </script>
 
+
+
     <!--   config app   -->
     <script src="public/js/config/config.js"> </script>
 
     <!--   config route - app   -->
     <script src="public/js/config/config-routes.js"> </script>
 
+    <!--    services    -->
+    <script src="public/js/services/main-service.js"> </script>
+
 
     <!--   controller   -->
+
     <script src="public/js/controller/main-controller.js"> </script>
 
 
