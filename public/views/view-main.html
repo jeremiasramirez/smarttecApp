@@ -1,5 +1,13 @@
+    <!--    search contacts    -->
+<form class="form" >
+    <input type="search"  placeholder="Search contact"
+           ng-model="searchs" class="medium">
+</form>
 
-<!--title -->
+
+
+
+<!--title  app-->
 <div class="container__title__page">
     <h1 class="title letter4 title__contact">
         <i class="fas fa-users"></i>
@@ -13,20 +21,24 @@
 <section class="container__add">
 
     <!-- icon add   -->
-    <label class="elements">
-        <p class="alert--warning min"> New <i class="far fa-plus-square add"></i> </p>
+    <label class="elements container__data" ng-click="hideCreated()">
+
+        <p class="alert--warning min addNewContactButton"> New <i class="far fa-plus-square add"></i> </p>
+
+
+
     </label>
 
 
-<!--    inputs  -->
-    <article class="container__add__contact">
+<!--    inputs - create contact -->
+    <article class="container__add__contact" ng-hide="hideCreateContact">
         <form class="form">
 
             <input type="number" placeholder="ID" ng-model="id">
             <input type="text" placeholder="Name" ng-model="name" >
             <input type="email" placeholder="Email" ng-model="email" >
             <input type="text"  placeholder="Number phone" ng-model="phone" >
-            <button class="btn--add"  ng-click="createPerson(id, name, email, phone)">Create</button>
+            <button class="btn--add min"  ng-click="createPerson(id, name, email, phone)"> Create  </button>
 
         </form>
     </article>
@@ -40,12 +52,11 @@
 
     <div class="container__contact"
          id="container__contact"
-         ng-repeat="contact in data " >
+         ng-repeat="contact in data | filter: searchs" >
 
 
         <!--    Container id && Edit   -->
         <div class="container__id" >
-
             <span class="btn--rm" id="id">{{contact.id}}</span>
 
             <label >
@@ -53,11 +64,14 @@
                 <i class="fas fa-user-edit edit" ng-click="showOrHide()">
                     <input type="checkbox" ng-model="checked" style="opacity: 0">
                 </i>
+
             </label>
 
 
 
         </div>
+
+
 
         <!--   container name   -->
         <div class="container__data">
@@ -65,6 +79,8 @@
             <p> {{contact.name}} </p>
         </div>
 
+
+        <!--    container email    -->
         <div class="container__data">
             <p> Email </p>
             <p> {{contact.email}} </p>
