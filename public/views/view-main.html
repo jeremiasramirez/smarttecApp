@@ -9,21 +9,30 @@
 
 
 
-
+    <!--    create contact    -->
 <section class="container__add">
 
+    <!-- icon add   -->
     <label class="elements">
-        <i class="far fa-plus-square add"></i>
+        <p class="alert--warning min"> New <i class="far fa-plus-square add"></i> </p>
     </label>
 
+
+<!--    inputs  -->
     <article class="container__add__contact">
         <form class="form">
-            <input type="number" placeholder="ID" ng-model="name">
-            <input type="text" placeholder="Name" ng-model="email">
-            <input type="number" placeholder="Name" ng-model="phone">
-            <button ng-click="createPerson(name, email, phone)">Create</button>
+
+            <input type="number" placeholder="ID" ng-model="id">
+            <input type="text" placeholder="Name" ng-model="name" >
+            <input type="email" placeholder="Email" ng-model="email" >
+            <input type="text"  placeholder="Number phone" ng-model="phone" >
+            <button class="btn--add"  ng-click="createPerson(id, name, email, phone)">Create</button>
+
         </form>
     </article>
+
+
+
 
 </section>
 <section class="container__all__contacts">
@@ -82,13 +91,15 @@
         </div>
 
 
+        <div>
 
+        </div>
 
         <!--    container show && remove contact    -->
         <div class="container__data">
 
             <i class="fas fa-trash trash" ng-click="removeContact(contact.name)"></i>
-            <i class="fas fa-arrow-down showMoreData"></i>
+            <i class="fas fa-arrow-down showMoreData" ng-click="showMore()"></i>
 
         </div>
     </div>

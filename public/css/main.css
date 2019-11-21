@@ -38,7 +38,7 @@
 .container__data{
 
     padding-right: .3em;
-    margin-top: .6em;
+    margin-top: .2em;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -72,8 +72,11 @@ label{
 
 
 .add{
-    color: green;
-    font-size: 25px;
+    color: #ccc;
+    margin-left: .3em;
+    font-size: 22px;
+    margin-bottom: -1em;
+    display: inline-block;
 }
 
 .add:hover{

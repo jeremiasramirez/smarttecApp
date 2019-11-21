@@ -8,15 +8,25 @@ smartTecApp.controller("mainController", [ "$scope" ,"$http", "$timeout", functi
     $scope.data = [];
 
 
-    $scope.createPerson = function(x,y,z){
+    $scope.createPerson = function( idObj, nameObj, emailObj, numberObj ){
 
-        $scope.newPerson = {
-            name: x,
-            email: y,
-            number: z
-        };
+        if( ( idObj !== "" ) && ( nameObj !== "" ) && ( emailObj !== "" ) && ( numberObj !== "" )){
 
-        $scope.data.push($scope.newPerson);
+            $scope.newPerson = {
+
+                id: idObj,
+                name: nameObj,
+                email: emailObj,
+                number: numberObj
+
+            };
+
+            $scope.data.push($scope.newPerson);
+
+        }
+        else{
+            floatNotificationError("Not empty");
+        }
     };
 
 
