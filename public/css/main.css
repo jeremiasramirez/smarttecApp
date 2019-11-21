@@ -125,4 +125,13 @@ label{
     display: flex;
     margin:.5em;
     justify-content: space-between;
+    animation: scalade .4s linear;
+}
+
+@keyframes scalade{
+
+    to{
+        opacity: .3;
+    }
+
 }
