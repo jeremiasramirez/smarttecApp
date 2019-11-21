@@ -124,7 +124,12 @@ label{
 .container__add__contact{
     display: flex;
     margin:.5em;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    width: 500px;
     justify-content: space-between;
+    flex-direction: column;
+
     animation: scalade .4s linear;
 }
 
@@ -142,4 +147,27 @@ label{
 }
 .editionContact{
     background-color: #eee;
+}
+
+.containerHideMore{
+    animation: goIs .6s linear;
+}
+@keyframes goIs{
+    to{
+        opacity: 0;
+    }
+}
+
+.titleCreateContact{
+    font-size: 18px;
+    text-align: center;
+    color: green;
+    font-family: sans-serif;
+}
+
+
+.createGrid{
+    display: grid;
+    grid-template-columns: 200px 200px;
+    grid-template-rows: 30px;
 }

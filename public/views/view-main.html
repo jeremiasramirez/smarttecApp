@@ -15,18 +15,16 @@
 </div>
 
 
-<div>
-    {{data | json}}
-</div>
-
     <!--    create contact    -->
-<section class="container__add">
+<section class="container__add min">
 
     <!-- icon add   -->
     <label class="elements container__data" ng-click="hideCreated()">
 
-        <p class="alert--warning min addNewContactButton"> New <i class="far fa-plus-square add"></i> </p>
-
+        <p class="alert--warning min addNewContactButton">
+            New
+            <i class="far fa-plus-square add"></i>
+        </p>
 
 
     </label>
@@ -34,13 +32,17 @@
 
 <!--    inputs - create contact -->
     <article class="container__add__contact" ng-hide="hideCreateContact">
-        <form class="form">
+        <h1 class="titleCreateContact">  Create a contact</h1>
+        <form class="form createGrid">
 
             <input type="number" placeholder="ID" ng-model="id">
             <input type="text" placeholder="Name" ng-model="name" >
             <input type="email" placeholder="Email" ng-model="email" >
             <input type="text"  placeholder="Number phone" ng-model="phone" >
-            <button class="btn--add min"  ng-click="createPerson(id, name, email, phone)"> Create  </button>
+            <input type="text"  placeholder="City" ng-model="city" >
+            <input type="text"  placeholder="Website" ng-model="site" >
+            <input type="text"  placeholder="Company" ng-model="company" >
+            <button class="btn--add min"  ng-click="createPerson(id, name, email, phone, city, site, company)"> Create  </button>
 
         </form>
     </article>
@@ -61,9 +63,9 @@
         <div class="container__id" >
             <span class="btn--rm" id="id">{{contact.id}}</span>
 
-            <label >
+            <label>
 
-                <i class="fas fa-user-edit edit" ng-click="showOrHide()">
+                <i class="fas fa-user-edit edit" ng-click="showOrHide()" title="Edit">
                     <input type="checkbox" ng-model="checked" style="opacity: 0">
                 </i>
 
@@ -96,11 +98,23 @@
         </div>
 
 
-        <section class="containerHideMore" ng-hide="checked">
+        <section class="containerHideMore"  ng-if="checked2">
 
             <div class="container__data">
                 <p> City </p>
                 <p> {{contact.address.city}} </p>
+            </div>
+
+
+            <div class="container__data">
+                <p> Website </p>
+                <p> {{contact.website}} </p>
+            </div>
+
+
+            <div class="container__data">
+                <p> Company </p>
+                <p> {{contact.company.name}} </p>
             </div>
 
         </section>
@@ -112,7 +126,10 @@
             <hr>
             <form class="form">
 
-                <h1 class="editTitleName">Edit</h1>
+                <h1 class="editTitleName">
+                    Edit
+                    <i class="far fa-plus-square add"></i>
+                </h1>
 
                 <label>
                      <input ng-model="contact.name" type="text" value="{{ contact.name }}">
@@ -127,7 +144,15 @@
                 </label>
 
                 <label>
-                    <input ng-model="contact.address.city" type="text" value="{{ contact.phone }}">
+                    <input ng-model="contact.address.city" type="text" value="{{ contact.address.city }}">
+                </label>
+
+                <label>
+                    <input ng-model="contact.website" type="text" value="{{ contact.website }}">
+                </label>
+
+                <label>
+                    <input ng-model="contact.company" type="text" value="{{ contact.company.name }}">
                 </label>
 
 
@@ -135,20 +160,23 @@
         </div>
 
 
+
+
+
+
         <div>
+            </div>
 
-        </div>
+            <!--    container show && remove contact    -->
+            <div class="container__data">
 
-        <!--    container show && remove contact    -->
-        <div class="container__data">
+                <i class="fas fa-trash trash" ng-click="removeContact(contact.name)" title="Delete {{contact.name}}"></i>
+                <label>
+                    <i class="fas fa-arrow-down showMoreData" ng-click="showMore()" title="Show more"></i>
+                    <input type="checkbox" ng-model="checked2" style="opacity: 0">
+                </label>
 
-            <i class="fas fa-trash trash" ng-click="removeContact(contact.name)" title="Delete {{contact.name}}"></i>
-            <label>
-                <i class="fas fa-arrow-down showMoreData" ng-click="showMore()" title="Show more"></i>
-                <input type="checkbox" ng-model="checked" style="opacity: 0">
-            </label>
-
-        </div>
+            </div>
     </div>
 
 

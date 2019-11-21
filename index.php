@@ -75,8 +75,6 @@
 
 
 
-
-
     <!--    data    -->
     <div ng-view>   </div>
 

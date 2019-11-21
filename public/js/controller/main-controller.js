@@ -8,9 +8,13 @@ smartTecApp.controller("mainController", [ "$scope" ,"$http", "$timeout", functi
     $scope.data = [];
 
 
-    $scope.createPerson = function( idObj, nameObj, emailObj, numberObj ){
+    $scope.createPerson = function(idObj, nameObj, emailObj, numberObj, city , site, company){
 
-        if( ( idObj !== "" ) && ( nameObj !== "" ) && ( emailObj !== "" ) && ( numberObj !== "" )){
+        if( (( idObj = undefined ) === true) || ( nameObj === undefined ) || ( emailObj === "" ) || ( numberObj === "" ) || (city === "") || (site === "") || (company === "") ){
+            floatNotificationError("fields are not accepted");
+        }
+
+        else{
 
             $scope.newPerson = {
 
@@ -23,9 +27,6 @@ smartTecApp.controller("mainController", [ "$scope" ,"$http", "$timeout", functi
 
             $scope.data.push($scope.newPerson);
 
-        }
-        else{
-            floatNotificationError("Not empty");
         }
     };
 
