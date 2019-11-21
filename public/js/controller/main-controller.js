@@ -82,13 +82,15 @@ smartTecApp.controller("mainController", [ "$scope" ,"$http", "$timeout", functi
         floatNotificationError("Deleting " + name);
 
         let allContacts = document.querySelectorAll("#container__contact");
+        let fatherEl = document.getElementById("container__contact");
 
-        for(let i=0; i<allContacts.length; i++){
-            allContacts[i].addEventListener("click", function(){
 
-                $timeout(()=>{
-                    allContacts[i].remove();
-                }, 500)
+        for(let i=0; i<allContacts.length; i++) {
+            allContacts[i].addEventListener("click", function (e) {
+
+
+                fatherEl.remove();
+
 
             }, false)
 
