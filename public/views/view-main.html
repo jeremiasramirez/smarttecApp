@@ -10,28 +10,87 @@
 
 
 
+<section class="container__add">
+
+    <label class="elements">
+        <i class="far fa-plus-square add"></i>
+    </label>
+
+    <article class="container__add__contact">
+        <form class="form">
+            <input type="number" placeholder="ID" ng-model="name">
+            <input type="text" placeholder="Name" ng-model="email">
+            <input type="number" placeholder="Name" ng-model="phone">
+            <button ng-click="createPerson(name, email, phone)">Create</button>
+        </form>
+    </article>
+
+</section>
 <section class="container__all__contacts">
 
 
-    <div class="container__contact" ng-repeat="contact in data | limitTo: 1">
+    <div class="container__contact"
+         id="container__contact"
+         ng-repeat="contact in data " >
+
 
         <!--    Container id && Edit   -->
-        <div class="container__id">
+        <div class="container__id" >
 
-            <span class="btn--rm">{{contact.id}}</span>
-            <i class="fas fa-user-edit edit"></i>
+            <span class="btn--rm" id="id">{{contact.id}}</span>
 
+            <label >
+
+                <i class="fas fa-user-edit edit" ng-click="showOrHide()">
+                    <input type="checkbox" ng-model="checked" style="opacity: 0">
+                </i>
+            </label>
+
+
+
+        </div>
+
+        <!--   container name   -->
+        <div class="container__data">
+            <p> Name </p>
+            <p> {{contact.name}} </p>
         </div>
 
         <div class="container__data">
-            <p>Name</p>
-            <p>{{contact.name}}</p>
+            <p> Email </p>
+            <p> {{contact.email}} </p>
+        </div>
+
+
+
+        <!-- Edition -->
+        <div class="editionContact" ng-if="checked" ng-hide="hideEdition">
+            <form class="form">
+
+
+                <label>
+                     <input ng-model="contact.name" type="text" value="{{ contact.name }}">
+                </label>
+
+                <label>
+                     <input ng-model="contact.name" type="text" value="{{ contact.name }}">
+                </label>
+
+
+
+            </form>
         </div>
 
 
 
 
+        <!--    container show && remove contact    -->
+        <div class="container__data">
 
+            <i class="fas fa-trash trash" ng-click="removeContact(contact.name)"></i>
+            <i class="fas fa-arrow-down showMoreData"></i>
+
+        </div>
     </div>
 
 

@@ -7,11 +7,18 @@ smartTecApp.controller("mainController", [ "$scope" ,"$http", "$timeout", functi
 
     $scope.data = [];
 
-    $scope.newPerson = {
-        name: "name",
-        email: "jereramirez499@gmail.com",
-        number: "numberPhone"
+
+    $scope.createPerson = function(x,y,z){
+
+        $scope.newPerson = {
+            name: x,
+            email: y,
+            number: z
+        };
+
+        $scope.data.push($scope.newPerson);
     };
+
 
     /*http request*/
     $http({
@@ -23,10 +30,69 @@ smartTecApp.controller("mainController", [ "$scope" ,"$http", "$timeout", functi
 
     }).then((res) => {
 
+
         $scope.data = res.data;
 
 
+        console.log(res.data)
+
+
+
+
+
     });
+
+
+
+    $scope.hideEdition = 0;
+
+    $scope.showOrHide = function(){
+
+        if($scope.hideEdition === 1){
+            $scope.hideEdition = 0;
+        }
+
+
+
+    };
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * functions - removeContacts
+     * */
+
+    $scope.removeContact = function(name){
+
+        floatNotificationError("Deleting " + name);
+
+        let allContacts = document.querySelectorAll("#container__contact");
+
+        for(let i=0; i<allContacts.length; i++){
+            allContacts[i].addEventListener("click", function(){
+
+                $timeout(()=>{
+                    allContacts[i].remove();
+                }, 1500)
+
+            }, false)
+
+        }
+
+    };
+
+
+
 
 
 

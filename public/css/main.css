@@ -19,10 +19,11 @@
 
 .container__id{
 
-    padding-right: .3em;
+    padding-right: .2em;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
 
 }
 
@@ -42,4 +43,72 @@
     justify-content: space-between;
     align-items: center;
 
+}
+
+
+.container__data p {
+
+    padding-right: .3em;
+    padding-left: .3em;
+
+}
+
+
+.trash{
+    color: red;
+    font-size: 17px;
+    padding:.3em;
+    cursor: pointer;
+}
+
+.trash:hover{
+    transform: translateY(-2px) scale(1.1);
+    transition :.4s;
+}
+
+label{
+    text-align: center;
+}
+
+
+.add{
+    color: green;
+    font-size: 25px;
+}
+
+.add:hover{
+    transform: scale(1.1);
+    transition: .5s;
+    cursor: pointer;
+}
+
+
+.container__add{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.elements i {
+
+    margin-right: .5em
+}
+
+.showMoreData{
+    color: blue;
+    cursor: pointer;
+    font-size: 18px;
+    animation: upto 2s infinite linear backwards;
+}
+
+@keyframes upto{
+    10%{
+        transition: .5s;
+        transform: translateY(3px);
+        opacity: .7;
+    }
+    50%{
+        transform: translateY(-3px);
+    }
 }
