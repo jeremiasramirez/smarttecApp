@@ -12,16 +12,16 @@ smartTecApp.config(["$routeProvider", function($routeProvider){
             templateUrl: "public/views/view-main.html",
             controller: "mainController"
 
-        });
+        })
 
         /*
         *       ~~~   route 2    ~~~
         * /
 
          */
-        // .when("/", {
-        //
-        // })
+        .otherwise({
+            redirectTo: "/"
+    })
 
 
 
