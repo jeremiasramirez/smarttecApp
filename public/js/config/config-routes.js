@@ -17,10 +17,12 @@ smartTecApp.config(["$routeProvider", function($routeProvider){
         /*
         *       ~~~   route 2    ~~~
         * /
+
+         */
         // .when("/", {
         //
         // })
-        //
+
 
 
 
