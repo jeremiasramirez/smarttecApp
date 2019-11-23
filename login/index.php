@@ -53,14 +53,15 @@
 
      <form action="index.php" class="form" method="post">
 
+        <p class="fas fa-shield-alt secure"></p>
+        
          <h1 class="titleSecurity">
              SmartTec Security
-             <i class="fas fa-shield-alt secure"></i>
          </h1>
 
-         <input type="number" id="result" name="result" placeholder="2 + 2 = ?">
+         <input type="number" id="result" name="result" placeholder="2 + 2 = ?" >
 
-         <button class="btn--yes" id="send">Validate</button>
+         <button class="btn--rm" id="send">Validate</button>
      </form>
 
 </div>
