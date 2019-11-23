@@ -1,15 +1,23 @@
 /*
 * main controller app
-* */
+* */ 
 
 smartTecApp.controller("mainController", [ "$scope" ,"$http", "$timeout", function( $scope, $http,  $timeout ){
+
+$scope.conectionActive = function(){
+
 
 
     $scope.data = [];
 
     $scope.hideCreateContact = 0;
+
     $scope.createPerson = function(idObj, nameObj, emailObj, numberObj, city , site, company){
+
+
         $scope.hideCreateContact =1
+
+
         if( (( idObj = undefined ) === true) || ( nameObj === undefined ) || ( emailObj === "" ) || ( numberObj === "" ) || (city === "") || (site === "") || (company === "") ){
             floatNotificationError("fields are not accepted");
         }
@@ -32,14 +40,30 @@ smartTecApp.controller("mainController", [ "$scope" ,"$http", "$timeout", functi
 
             };
 
-            $scope.data.push($scope.newPerson);
+            $scope.data.unshift($scope.newPerson);
 
         }
+
     };
 
+
+
+
+
     $scope.statusMsj = 0;
+    $scope.timingError = 1;
+
+
+
+
+
     /*http request*/
-    $http({
+
+$scope.requested = function(){
+
+
+
+     $http({
 
 
         method: "get",
@@ -53,6 +77,10 @@ smartTecApp.controller("mainController", [ "$scope" ,"$http", "$timeout", functi
         $scope.statusMsj = 1;
 
     });
+}
+
+$scope.requested()
+ 
 
 
     $scope.hideEdition = 0;
@@ -61,15 +89,33 @@ smartTecApp.controller("mainController", [ "$scope" ,"$http", "$timeout", functi
 
         if($scope.hideEdition === 1){
             $scope.hideEdition = 0;
+
         }
 
 
 
     };
 
+   
+
+    $timeout(function(){
+       
+        if($scope.statusMsj === 0){
+
+             
+            $scope.conectionMsj = "Failed conection";
+            $scope.timingError = 0;
+          
+
+
+        }
+
+    }, 8000)
 
 
 
+
+ console.clear();
 
 
 
@@ -134,5 +180,10 @@ smartTecApp.controller("mainController", [ "$scope" ,"$http", "$timeout", functi
 
 
 
+}
+$scope.conectionActive()
+
+ 
 
 }]);
+
