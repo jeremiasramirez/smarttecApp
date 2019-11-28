@@ -138,10 +138,10 @@ $scope.requested()
 
 
         for(let i=0; i<allContacts.length; i++) {
-            allContacts[i].addEventListener("click", function (e) {
+            allContacts[i].addEventListener("dblclick", function (e) {
 
 
-                fatherEl.remove();
+                allContacts[i].remove();
 
 
             }, false)
