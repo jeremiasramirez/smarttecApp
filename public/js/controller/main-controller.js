@@ -23,7 +23,7 @@ $scope.conectionActive = function(){
         }
 
         else{
-
+             
             $scope.newPerson = {
 
                 id: idObj,
@@ -39,8 +39,7 @@ $scope.conectionActive = function(){
                 website: site
 
             };
-
-            $scope.data.unshift($scope.newPerson);
+                $scope.data.unshift($scope.newPerson);
 
         }
 
@@ -113,9 +112,7 @@ $scope.requested()
     }, 8000)
 
 
-
-
- console.clear();
+ 
 
 
 
@@ -129,27 +126,13 @@ $scope.requested()
      * functions - removeContacts
      * */
 
-    $scope.removeContact = function(name){
+    $scope.removeContact = function(index, name){
 
-        floatNotificationError("Deleting " + name);
-
-        let allContacts = document.querySelectorAll("#container__contact");
-        let fatherEl = document.getElementById("container__contact");
-
-
-        for(let i=0; i<allContacts.length; i++) {
-            allContacts[i].addEventListener("dblclick", function (e) {
-
-
-                allContacts[i].remove();
-
-
-            }, false)
-
-        }
+    
+        floatNotificationError("Eliminado " + name);
+        $scope.data.splice(index, 1);
 
     };
-
 
 
 

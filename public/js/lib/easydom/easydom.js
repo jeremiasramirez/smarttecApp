@@ -239,7 +239,7 @@ function deleteMsj(msj){
     if(msj){
         setTimeout(()=>{
             msj.remove();
-        }, 4000);
+        }, 1500);
 
     }
 }

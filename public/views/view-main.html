@@ -67,9 +67,9 @@
 
 
         <div class="container__contact"
-            ng-dblclick="removeContact(contact.name)"
+            
              id="container__contact"
-             ng-repeat="contact in data | filter: searchs" >
+             ng-repeat="(key, contact) in data | filter: searchs track by $index" >
 
 
             <!--    Container id && Edit   -->
@@ -189,7 +189,7 @@
                 <!--    container show && remove contact    -->
                 <div class="container__data">
 
-                    <!-- <i class="fas fa-trash trash"  title="Delete {{contact.name}}"></i> -->
+                    <i class="fas fa-trash trash" ng-click="removeContact(key, contact.name)" title="Delete {{contact.name}}"></i>
                     <label>
                         <i class="fas fa-arrow-down showMoreData" id="showMoreData"  ng-click="showMore()" title="Show more"></i>
                         <input type="checkbox" ng-model="checked2" style="opacity: 0">
