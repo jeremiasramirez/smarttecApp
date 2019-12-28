@@ -9,23 +9,24 @@
     <!--    title  app-->
 <div class="container__title__page">
     <h1 class="title letter4 title__contact">
-        <i class="fas fa-users"></i>
+        <i class="fas fa-users in"></i>
     </h1>
 </div>
 
 
     <!-- error conection -->
-<p class='alert--error blurtime' ng-hide="timingError"> {{conectionMsj}} </p>
+<p class="btn--rm in" ng-hide="timingError" ng-click="reloadApp()"> reload <i class="fas fa-sync"> </i></p>
 
 
     <!--  load spinner     -->
-    <div class="spinner" ng-hide="statusMsj==1">
-        <i class="fas fa-spinner"></i>
+    <div class="spinner" ng-hide="statusMsj==1 || buttonReloadApp=='on'">
+        <i class="fas fa-spinner in"></i>
     </div>
 
+ 
 
 
-<section class="container__father__data" ng-if="statusMsj==1">
+<section class="container__father__data in" ng-if="statusMsj==1">
 
         <!--    create contact    -->
     <section class="container__add min">
@@ -43,9 +44,9 @@
 
 
     <!--    inputs - create contact -->
-        <article class="container__add__contact" ng-hide="hideCreateContact">
+        <article class="container__add__contact in" ng-hide="hideCreateContact">
             <h1 class="titleCreateContact">  Create a contact</h1>
-            <form class="form createGrid">
+            <form class="form createGrid in">
 
                 <input type="number" placeholder="ID" ng-model="id">
                 <input type="text" placeholder="Name" ng-model="name" >
@@ -54,6 +55,8 @@
                 <input type="text"  placeholder="City" ng-model="city" >
                 <input type="text"  placeholder="Website" ng-model="site" >
                 <input type="text"  placeholder="Company" ng-model="company" >
+
+
                 <button class="btn--add min"  ng-click="createPerson(id, name, email, phone, city, site, company)"> Create  </button>
 
             </form>
@@ -66,10 +69,9 @@
     <section class="container__all__contacts">
 
 
-        <div class="container__contact"
-            
-             id="container__contact"
-             ng-repeat="(key, contact) in data | filter: searchs track by $index" >
+        <div class="container__contact in"
+            id="container__contact"
+            ng-repeat="(key, contact) in data | filter: searchs track by $index" >
 
 
             <!--    Container id && Edit   -->
@@ -102,31 +104,34 @@
                 <p> Email </p>
                 <p> {{contact.email}} </p>
             </div>
+            
 
-
-            <!--    container numberphone    -->
+            <!-- container city -->
             <div class="container__data">
-                <p> Number </p>
-                <p> {{contact.phone}} </p>
+                <p> City </p>
+                <p> {{contact.address.city}} </p>
             </div>
 
+            <!--    container numberphone    -->
+  <!--           <div class="container__data">
+                <p> Number </p>
+                <p> {{contact.number}} </p>
+            </div>
 
+ -->
 
             <section class="containerHideMore"  ng-if="checked2">
 
-                <div class="container__data">
-                    <p> City </p>
-                    <p> {{contact.address.city}} </p>
-                </div>
 
 
-                <div class="container__data">
+
+                <div class="in container__data">
                     <p> Website </p>
                     <p><a href="https://{{contact.website}} ">{{contact.website}} </a> </p>
                 </div>
 
 
-                <div class="container__data">
+                <div class="in container__data">
                     <p> Company </p>
                     <p> {{contact.company.name}} </p>
                 </div>
@@ -137,7 +142,7 @@
 
 
             <!-- Edition -->
-            <div class="editionContact" ng-if="checked" ng-hide="hideEdition">
+            <div class="editionContact in" ng-if="checked" ng-hide="hideEdition">
                 <hr>
                 <form class="form">
 
@@ -147,31 +152,31 @@
                     </h1>
 
                     <label>
-                        <input ng-model="contact.id" type="text" value="{{ contact.id }}" placeholder="ID">
+                        <input ng-model="contact.id" type="text" value={{contact.id}} placeholder="ID">
                     </label>
 
                     <label>
-                         <input ng-model="contact.name" type="text" value="{{ contact.name }}" placeholder="Name">
+                         <input ng-model="contact.name" type="text" value={{contact.name}} placeholder="Name">
                     </label>
 
                     <label>
-                         <input ng-model="contact.email" type="text" value="{{ contact.email }}" placeholder="Email">
+                         <input ng-model="contact.email" type="text" value={{contact.email}} placeholder="Email">
+                    </label>
+
+<!--                     <label>
+                        <input ng-model="contact.number" type="text" value={{contact.number}} placeholder="Number">
+                    </label> -->
+
+                    <label>
+                        <input ng-model="contact.address.city" type="text" value={{contact.address.city}} placeholder="City">
                     </label>
 
                     <label>
-                        <input ng-model="contact.phone" type="text" value="{{ contact.phone }}" placeholder="Number">
+                        <input ng-model="contact.website" type="text" value={{contact.website}} placeholder="Website">
                     </label>
 
                     <label>
-                        <input ng-model="contact.address.city" type="text" value="{{ contact.address.city }}" placeholder="City">
-                    </label>
-
-                    <label>
-                        <input ng-model="contact.website" type="text" value="{{ contact.website }}" placeholder="Website">
-                    </label>
-
-                    <label>
-                        <input ng-model="contact.company.name" type="text" value="{{ contact.company.name }}" placeholder="Company">
+                        <input ng-model="contact.company.name" type="text" value={{contact.company.name}} placeholder="Company">
                     </label>
 
 

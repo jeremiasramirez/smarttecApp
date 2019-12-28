@@ -35,10 +35,10 @@
     <link rel="stylesheet" href="public/css/lib/fontawesome/css/all.css" />
 
     <!--    easy dom css   -->
-    <link rel="stylesheet" href="public/css/lib/easydom/easydom.css" />
+    <link rel="stylesheet" href="node_modules/jeremias-easydom/easydom.css" />
 
     <!--    easy dom js   -->
-   <script src="public/js/lib/easydom/easydom.js">  </script>
+   <script src="node_modules/jeremias-easydom/easydom.js">  </script>
 
 
     <!--    angular  library    -->

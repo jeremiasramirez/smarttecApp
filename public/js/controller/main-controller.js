@@ -18,8 +18,8 @@ $scope.conectionActive = function(){
         $scope.hideCreateContact =1
 
 
-        if( (( idObj = undefined ) === true) || ( nameObj === undefined ) || ( emailObj === "" ) || ( numberObj === "" ) || (city === "") || (site === "") || (company === "") ){
-            floatNotificationError("fields are not accepted");
+        if( ( !idObj ) || ( !nameObj ) || ( !emailObj ) || ( !numberObj ) || (!city) || (!site) || (!company) ){
+            floatNotificationError("fields empty");
         }
 
         else{
@@ -29,17 +29,19 @@ $scope.conectionActive = function(){
                 id: idObj,
                 name: nameObj,
                 email: emailObj,
-                number: numberObj,
                 address: {
                     city: city
 ,                },
                 company: {
                     name: company
                 },
+                number: numberObj,
                 website: site
 
             };
-                $scope.data.unshift($scope.newPerson);
+         
+            
+            $scope.data.unshift($scope.newPerson);
 
         }
 
@@ -74,12 +76,12 @@ $scope.requested = function(){
 
         $scope.data = res.data;
         $scope.statusMsj = 1;
-
+        
     });
 }
 
 $scope.requested()
- 
+ console.clear()
 
 
     $scope.hideEdition = 0;
@@ -95,21 +97,31 @@ $scope.requested()
 
     };
 
+
+    $scope.buttonReloadApp = "off";
    
+
 
     $timeout(function(){
        
         if($scope.statusMsj === 0){
 
-             
-            $scope.conectionMsj = "Failed conection";
+ 
             $scope.timingError = 0;
-          
+            $scope.buttonReloadApp = "on";
+             console.clear()
 
 
         }
 
     }, 8000)
+
+    $scope.reloadApp = function(){
+       $scope.conectionActive()
+       console.clear();
+
+    }
+
 
 
  
@@ -165,7 +177,7 @@ $scope.requested()
 
 }
 $scope.conectionActive()
-
+ 
  
 
 }]);

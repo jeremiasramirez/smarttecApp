@@ -69,10 +69,10 @@
 
 
     <!--    easy dom    -->
-    <script src="../public/js/lib/easydom/easydom.js">  </script>
+    <script src="../node_modules/jeremias-easydom/easydom.js">  </script>
 
     <!--    login script    -->
-    <script src="../public/js/lib/login/login.js">   </script>
+    <script src="../public/js/login/login.js">   </script>
 
 
  </body>

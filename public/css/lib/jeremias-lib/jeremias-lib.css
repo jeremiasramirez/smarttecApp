@@ -759,19 +759,21 @@ table
 */
 
 .in{
-    animation: in .3s linear;
-    transition:.6s;
+    animation: fadeIn .6s linear backwards;
+    transition: .8s;
 }
-@keyframes in {
-    to{
-        transition:.8s;
-        overflow-y: hidden;
-        overflow-x: hidden;
-        transform:  scaleX(1.1);
-        transform-origin:center;
+@keyframes fadeIn{
+    from{
+        transform: translateY(-5px);
+        opacity: 0;
     }
-}
+    to{
+        opacity: 1;
+        transform: translateY(0);
+        transition: .4s;
+    }
 
+}
 
 
 
