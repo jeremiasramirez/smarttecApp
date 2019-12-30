@@ -44,7 +44,7 @@
 
 
     <!--  easy dom css   -->
-     <link rel="stylesheet" href="../public/css/lib/easydom/easydom.css">
+     <link rel="stylesheet" href="../node_modules/jeremias-easydom/easydom.css">
  </head>
  <body>
 

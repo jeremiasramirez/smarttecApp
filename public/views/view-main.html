@@ -1,21 +1,11 @@
     <!--    search contacts    -->
-<form class="form" >
+<form class="form searchContact" >
     <input type="search"  placeholder="Search contact"
-           ng-model="searchs" class="medium">
+           ng-model="searchs" class="min__search">
 </form>
-
-
-
-    <!--    title  app-->
-<div class="container__title__page">
-    <h1 class="title letter4 title__contact">
-        <i class="fas fa-users in"></i>
-    </h1>
-</div>
-
-
+ 
     <!-- error conection -->
-<p class="btn--rm in" ng-hide="timingError" ng-click="reloadApp()"> reload <i class="fas fa-sync"> </i></p>
+<p class="btn--rm in" ng-hide="timingError" ng-click="reloadApp()">  <i class="fas fa-sync"> </i></p>
 
 
     <!--  load spinner     -->
@@ -29,15 +19,28 @@
 <section class="container__father__data in" ng-if="statusMsj==1">
 
         <!--    create contact    -->
-    <section class="container__add min">
+    <section class="container__add">
 
         <!-- icon add   -->
-        <label class="elements container__data" ng-click="hideCreated()">
+        <label class="elements container__data__navbar" >
 
-            <p class="alert--warning min addNewContactButton">
-                New
-                <i class="far fa-plus-square add"></i>
+                <p class="addNewContactButton" 
+                    ng-click="hideCreated()">
+                    
+                    <i class={{iconSearch}}></i>
+
+              
+
+                <p class="addNewContactButton"
+                    ng-click="execSearch()">
+                    <i class={{iconAdd}}></i>
+                </p>
+
+
             </p>
+
+
+           
 
 
         </label>
@@ -45,6 +48,7 @@
 
     <!--    inputs - create contact -->
         <article class="container__add__contact in" ng-hide="hideCreateContact">
+            <div class="alert--error in" ng-if="msjErrorToCreate == 0">Empty fields</div>
             <h1 class="titleCreateContact">  Create a contact</h1>
             <form class="form createGrid in">
 

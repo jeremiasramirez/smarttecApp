@@ -68,7 +68,7 @@
     <nav>
 
         <ul class="menu--blue">
-            <li> <a href="#!/" class=letter3> smartTecApp </a> </li>
+            <li> <a href="#!/" class="letter3 in"> smartTecApp </a>   <i class="fas fa-users in"></i></li>
         </ul>
 
     </nav>
