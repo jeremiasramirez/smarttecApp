@@ -11,7 +11,7 @@ $scope.conectionActive = function(){
 
     $scope.iconAdd = "fas fa-search add";
      
-
+    $scope.switchSearch = 0;
 
     $scope.data = [];
     $scope.hideCreateContact = 0;
@@ -47,10 +47,6 @@ $scope.conectionActive = function(){
   
 
     $scope.createPerson = function(idObj, nameObj, emailObj, numberObj, city , site, company){
-
-
-        
-
 
         if( ( !idObj ) || ( !nameObj ) || ( !emailObj ) || ( !numberObj ) || (!city) || (!company) ){
            
@@ -100,12 +96,11 @@ $scope.requested = function(){
     });
 }
 
-$scope.requested()
-console.clear()
+    $scope.requested()
+    console.clear()
 
 
     $scope.hideEdition = 0;
-
     $scope.showOrHide = function(){
 
         if($scope.hideEdition === 1){
@@ -131,6 +126,11 @@ console.clear()
         }
 
     }, 8000)
+
+
+
+
+
 
     $scope.reloadApp = function(){
        $scope.conectionActive()
@@ -163,8 +163,15 @@ console.clear()
 
     $scope.execSearch = function(){
 
-        $scope.iconAdd = "fas fa-times add";
-     
+        
+        if( $scope.switchSearch == 0){
+            $scope.switchSearch = 1;
+            $scope.iconAdd = "fas fa-times add";
+        }
+        else{
+            $scope.switchSearch = 0;
+            $scope.iconAdd = "fas fa-search add";
+        }
 
     }
 

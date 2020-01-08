@@ -1,11 +1,13 @@
     <!--    search contacts    -->
-<form class="form searchContact" >
+<form class="form searchContact in" ng-hide="switchSearch==0">
     <input type="search"  placeholder="Search contact"
            ng-model="searchs" class="min__search">
 </form>
  
     <!-- error conection -->
-<p class="btn--rm in" ng-hide="timingError" ng-click="reloadApp()">  <i class="fas fa-sync"> </i></p>
+    <div class="responsive">
+        <p class="btn--rm in "   ng-hide="timingError" ng-click="reloadApp()">  <i class="fas fa-sync"> </i></p>
+    </div>
 
 
     <!--  load spinner     -->
